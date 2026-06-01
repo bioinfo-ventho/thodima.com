@@ -4,7 +4,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    // Served from the root of a custom domain (thodima.com).
+    // Served from the root of a custom domain (venkat.thodima.com).
     base: '/',
     plugins: [react(), tailwindcss()],
     server: {
