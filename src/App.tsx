@@ -550,7 +550,7 @@ export default function App() {
         <div className="max-w-5xl mx-auto space-y-3 font-mono">
           <p>© {new Date().getFullYear()} Dr. Venkat J. Thodima, Ph.D. — Professional Translational Genomics Portfolio.</p>
           <p className="text-3xs text-slate-500 max-w-xl mx-auto">
-            Translational Bioinformatics Research & Assay-Based Molecular Stratification Methods. Engineered in React, TypeScript and Tailwind for elite diagnostic profiling.
+            Translational Bioinformatics Research & Assay-Based Molecular Stratification Methods.
           </p>
         </div>
       </footer>
