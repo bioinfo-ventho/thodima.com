@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-primary-50: #f4f6fa;
+  --color-primary-100: #e8ecf4;
+  --color-primary-200: #d0dbeb;
+  --color-primary-500: #2b548a;
+  --color-primary-600: #1e3d6b;
+  --color-primary-900: #0f1c30;
+  
+  --color-accent-blue: #3b82f6;
+  --color-accent-teal: #0d9488;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-slate-50/50 text-slate-800 antialiased selection:bg-blue-100 selection:text-blue-900;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print settings to ensure the user can trigger 'Print CV' to download an immaculate PDF layout */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+  
+  .print-card {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin-bottom: 1.5rem !important;
+    page-break-inside: avoid;
+  }
+  
+  .print-cols {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Force standard margins and hide headers/footers */
+  @page {
+    margin: 1.5cm;
+  }
+
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+}
